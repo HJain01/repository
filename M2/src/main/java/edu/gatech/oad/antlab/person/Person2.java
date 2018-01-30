@@ -32,11 +32,11 @@ public class Person2 {
 	private String calc(String input) {
 	    //Person 2 put your implementation here
 		Math random = new Math.Random();
-		StringBuilder returnString = new StringBuilder();
+		String returnString = "";
 		int index;
 		for (char letter: input) {
 			index = random.nextInt(input.length());
-			returnString.insert(index);
+			returnString += input[index];
 		}
 	    return returnString;
 	}
