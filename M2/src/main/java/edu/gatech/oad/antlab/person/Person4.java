@@ -31,7 +31,19 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 4 put your implementation here
-      return null;
+      //ASCII values? 
+      char character;
+      int ascii;
+      char newChar;
+      String x = "";
+      for(int i = 0; i < input.length(); i++){
+        character = input.charAt(i);
+        ascii = (int) character;
+        ascii++;
+        newChar = (char) ascii;
+        x = x + newChar;
+      }
+      return x;
     }
     
     /**
@@ -45,6 +57,5 @@ public class Person4 {
     public String toString(String input) {
       return name + calc(input);
     }
-
 }
 
