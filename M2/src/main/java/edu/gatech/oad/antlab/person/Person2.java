@@ -1,5 +1,6 @@
 package edu.gatech.oad.antlab.person;
-
+import java.util.Random;
+import java.util.HashSet;
 /**
  *  A simple class for person 2
  *  returns their name and a
@@ -31,12 +32,15 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	    //Person 2 put your implementation here
-		Math random = new Math.Random();
-		StringBuilder returnString = new StringBuilder();
-		int index;
-		for (char letter: input) {
-			index = random.nextInt(input.length());
-			returnString.insert(index);
+		Random random = new Random();
+		String returnString = "";
+		HashSet vSet = new HashSet<Integer>();
+		while (returnString.length() != input.length()) {
+			int ndx = random.nextInt(input.length());
+			if (!vSet.contains(ndx)) {
+				vSet.add(ndx);
+				returnString += input.substring(ndx, ndx + 1);
+			}
 		}
 	    return returnString;
 	}
